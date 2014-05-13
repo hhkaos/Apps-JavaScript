@@ -9,7 +9,7 @@ Carga de la librería usando el módulo AMD.
 
 ###Uso
 
-var panning = new kineticPanning(map);
+```var panning = new kineticPanning(map);```
 
 ###Ejemplos
 [Ver demostración](http://91.121.152.137/apps/kineticPanning/).
