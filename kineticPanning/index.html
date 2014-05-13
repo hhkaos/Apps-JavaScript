@@ -21,7 +21,8 @@
 			async : true,
 			packages : [{
 				"name" : "utils",
-				"location" : location.pathname.replace(/\/[^/]+\/[^/]+$/, "") + "kineticPanning/src/utils"
+				"location" : location.pathname.replace(/\/[^/]+\/[^/]+$/, "") + "/src/utils"
+				
 			}]
 		};
 		</script>
@@ -35,7 +36,7 @@
 							zoom : 13,
 							sliderStyle : "small"
 						});
-					// Llamada a la clase kineticPanning
+					// Llamamos a KineticPanning
 					var panning = new kineticPanning(map);
 			});
 		</script>
