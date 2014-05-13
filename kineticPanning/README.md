@@ -7,7 +7,7 @@ Actualizado a la versión 3.9 del API JavaScript de ArcGIS.
 
 Carga de la librería usando el módulo AMD. 
 
-##Uso
+###Uso
 
 var panning = new kineticPanning(map);
 
