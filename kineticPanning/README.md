@@ -1,1 +1,3 @@
-Este proyecto simplemente hace que movernos por el mapa no sea tan estático
+Aplicaciones JavaScript
+
+Este proyecto simplemente hace que movernos por el mapa no sea tan estï¿½tico
