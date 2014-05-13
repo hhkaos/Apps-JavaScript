@@ -1,5 +1,5 @@
-###Kinetic Pan para el API JavaScript de ArcGIS
-=
+Kinetic Pan para el API JavaScript de ArcGIS
+======
 Este proyecto simplemente hace que movernos por el mapa no sea tan est�tico
 Funciona con los eventos del ratón y los eventos touch para dispositivos móviles.
 
@@ -12,9 +12,8 @@ Carga de la librería usando el módulo AMD
 var panning = new kineticPanning(map);
 
 ###Ejemplos
-Ver demo en  http://rymor.github.io/esri-kinetic-panning/examples/index.html
+[Ver demostración](http://91.121.152.137/apps/kineticPanning/)
+[Aquí](https://github.com/saik003/Apps-JavaScript/tree/master/kineticPanning) el código para descargar  
 
-Aquí el código para descargar at https://github.com/rymor/esri-kinetic-panning/examples
-
-###ESRI API Supported Versions
-Tested with versions 3.3 - 3.5
+###Versiones del API de ESRI soportadas
+Probado en versiones: 3.3 - 3.5
