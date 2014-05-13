@@ -7,12 +7,13 @@ Actualizado a la versión 3.9 del API JavaScript de ArcGIS
 
 Carga de la librería usando el módulo AMD 
 
-##USO
+##Usage
 
 var panning = new kineticPanning(map);
 
 ###Ejemplos
 [Ver demostración](http://91.121.152.137/apps/kineticPanning/).
+
 [Aquí](https://github.com/saik003/Apps-JavaScript/tree/master/kineticPanning) el código para descargar  
 
 ###Versiones del API de ESRI soportadas
