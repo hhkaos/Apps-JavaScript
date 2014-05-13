@@ -18,3 +18,5 @@ var panning = new kineticPanning(map);
 
 ###Versiones del API de ESRI soportadas
 Probado en versiones: 3.3 - 3.9
+
+Ejemplo basado en la libreria de Kinectic-panning de [rymor](https://github.com/rymor/esri-kinetic-panning)
