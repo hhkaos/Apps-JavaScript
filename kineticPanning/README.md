@@ -12,8 +12,8 @@ Carga de la librería usando el módulo AMD
 var panning = new kineticPanning(map);
 
 ###Ejemplos
-[Ver demostración](http://91.121.152.137/apps/kineticPanning/)
+[Ver demostración](http://91.121.152.137/apps/kineticPanning/)\n
 [Aquí](https://github.com/saik003/Apps-JavaScript/tree/master/kineticPanning) el código para descargar  
 
 ###Versiones del API de ESRI soportadas
-Probado en versiones: 3.3 - 3.5
+Probado en versiones: 3.3 - 3.9
