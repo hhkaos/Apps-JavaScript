@@ -1,13 +1,13 @@
 #Kinetic Pan para el API JavaScript de ArcGIS
-=
-Este proyecto simplemente hace que movernos por el mapa no sea tan estático.
+
+Este proyecto hace que movernos por el mapa no sea tan estático.
 Funciona con los eventos del ratón y los eventos touch para dispositivos móviles.
 
 Actualizado a la versión 3.9 del API JavaScript de ArcGIS.
 
 Carga de la librería usando el módulo AMD. 
 
-##USo
+##Uso
 
 var panning = new kineticPanning(map);
 
