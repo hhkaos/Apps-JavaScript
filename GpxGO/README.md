@@ -1,22 +1,22 @@
-#Kinetic Pan para el API JavaScript de ArcGIS
+#GPX GO Pro JavaScript ArcGIS
 
-Este proyecto hace que movernos por el mapa no sea tan estático. Suaviza los movimientos del mapa cuando nos movemos por él.
-Funciona con los eventos del ratón y los eventos touch para dispositivos móviles.
+Este ejemplo sincroniza un video capturado con una camara deportiva Go Pro Hero  y un GPX capturado con la aplicación Runtastic. Con esto podemos ver como ha transcurrido la ruta y lo que hemos visto en cada punto de ella.Podemos usar los controles del video (API Youtube) para posicionarnos en el punto del video que deseemos y automaticamente nos mostrará la posicion del mapa mas cercana a ese segundo. Tambien podemos hacer click sobre un punto de la ruta sobre el mapa y automaticamente el video se posicionará en el segundo mas cercano a esa coordenada.
+La sincronizacion del punto en el mapa se realiza cada dos segundos, este parametro se puede modificar.
 
-Actualizado a la versión 3.9 del API JavaScript de ArcGIS.
+Podemos usarlo con cualquier video y con cualquier GPX , el GPX en la demostración esta renombrado a .xml.
 
-Carga de la librería usando el módulo AMD. 
+Como mejoras se podria aplicar que el usuario pudiar seleccionar un video de youtube subido anteriormente y que cargue el GPX que tiene el local para poder realizarlo con sus datos.
 
-###Uso
+APIS Usadas:
+ArcGIS JavaScript 3.9
+Api Youtube HTML5
 
-```var panning = new kineticPanning(map);```
 
 ###Ejemplos
-[Ver demostración](http://91.121.152.137/apps/kineticPanning/).
+[Ver demostración](http://91.121.152.137/apps/gpxgo/index.html).
 
-[Aquí](https://github.com/saik003/Apps-JavaScript/tree/master/kineticPanning) el código para descargar.  
+[Aquí](https://github.com/saik003/Apps-JavaScript/tree/master/GpxGO) el código para descargar.  
 
 ###Versiones del API de ESRI soportadas
-Probado en versiones: 3.3 - 3.9
+Probado en versiones: 3.9
 
-Ejemplo basado en la libreria de Kinectic-panning de [rymor](https://github.com/rymor/esri-kinetic-panning)
