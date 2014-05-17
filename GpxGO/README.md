@@ -1,6 +1,6 @@
-#GPX GO Pro JavaScript ArcGIS
+#GPX GO Pro Hero JavaScript ArcGIS
 
-Este ejemplo sincroniza un video capturado con una camara deportiva Go Pro Hero  y un GPX capturado con la aplicación Runtastic. Con esto podemos ver como ha transcurrido la ruta y lo que hemos visto en cada punto de ella.Podemos usar los controles del video (API Youtube) para posicionarnos en el punto del video que deseemos y automaticamente nos mostrará la posicion del mapa mas cercana a ese segundo. Tambien podemos hacer click sobre un punto de la ruta sobre el mapa y automaticamente el video se posicionará en el segundo mas cercano a esa coordenada.
+Este ejemplo sincroniza un video capturado con una camara deportiva Go Pro Hero  y un GPX capturado con la aplicación **Runtastic**. Con esto podemos ver como ha transcurrido la ruta y lo que hemos visto en cada punto de ella.Podemos usar los controles del video (API Youtube) para posicionarnos en el punto del video que deseemos y automaticamente nos mostrará la posicion del mapa mas cercana a ese segundo. Tambien podemos hacer click sobre un punto de la ruta sobre el mapa y automaticamente el video se posicionará en el segundo mas cercano a esa coordenada.
 La sincronizacion del punto en el mapa se realiza cada dos segundos, este parametro se puede modificar.
 
 Podemos usarlo con cualquier video y con cualquier GPX , el GPX en la demostración esta renombrado a .xml.
