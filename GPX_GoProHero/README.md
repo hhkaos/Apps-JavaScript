@@ -19,7 +19,7 @@ Ahora el icono es un pictureMarkerSymbol que modifica su ángulo en base a los v
 ###Ejemplos
 [Ver demostración](http://91.121.152.137/apps/gpxgo/index.html).
 
-[Aquí](https://github.com/saik003/Apps-JavaScript/tree/master/GpxGO) el código para descargar.  
+[Aquí](https://github.com/saik003/Apps-JavaScript/tree/master/GPX_GoProHero) el código para descargar.  
 
 ###Versiones del API de ESRI soportadas
 Probado en versiones: 3.9
