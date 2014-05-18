@@ -7,7 +7,7 @@ Actualizado a la versión 3.9 del API JavaScript de ArcGIS.
 Carga de la librería usando el módulo AMD. 
 
 ###Previsualización
-<img src="http://91.121.152.137/images/imagenCircleMap.png" />&nbsp;
+<img width="100px" height="100px" src="http://91.121.152.137/images/imagenCircleMap.png" />&nbsp;
 
 ###Ejemplos
 [Ver demostración](http://91.121.152.137/apps/circlemap/index.html).
