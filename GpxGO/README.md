@@ -14,7 +14,7 @@ APIS Usadas:
 **Api Youtube HTML5**
 
 ###Actualización
-Ahora el icono es un pictureMarkerSymbol que modifica su angulo en base a los vertices de la línea.
+Ahora el icono es un pictureMarkerSymbol que modifica su ángulo en base a los vértices de la línea.
 
 ###Ejemplos
 [Ver demostración](http://91.121.152.137/apps/gpxgo/index.html).
