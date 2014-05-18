@@ -8,9 +8,13 @@ Podemos usarlo con cualquier video y con cualquier GPX , el GPX en la demostraci
 Como mejoras se podria aplicar que el usuario pudiar seleccionar un video de youtube subido anteriormente y que cargue el GPX que tiene el local para poder realizarlo con sus datos.
 
 APIS Usadas:
+
 **ArcGIS JavaScript 3.9**
+
 **Api Youtube HTML5**
 
+###Actualización
+Ahora el icono es un pictureMarkerSymbol que modifica su angulo en base a los vertices de la línea.
 
 ###Ejemplos
 [Ver demostración](http://91.121.152.137/apps/gpxgo/index.html).
