@@ -29,6 +29,12 @@
    //Array usado y cargado desde el fichero loadGPX.js con los segundos del video y la relacion de los puntos del gpx
     var arraySegundos=[];
 
+    //Punto anterior para cualcular el angulo entre dos puntos
+    var puntoAnterior;
+
+    //Valor del angulo que hay entre cada punto para aplicarselo al icono
+    var valor=0.0;
+
     /////////// Código para cargar el API HTML5 de youtube
     // 2. This code loads the IFrame Player API code asynchronously.
     var tag = document.createElement('script');
@@ -58,8 +64,9 @@
       "esri/symbols/SimpleMarkerSymbol",
       "esri/Color",
       "esri/graphic",
-      "esri/layers/GraphicsLayer"], 
-      function(Map,SimpleMarkerSymbol,Color,Graphic,GraphicsLayer) {
+      "esri/layers/GraphicsLayer",
+      "esri/symbols/PictureMarkerSymbol"], 
+      function(Map,SimpleMarkerSymbol,Color,Graphic,GraphicsLayer,PictureMarkerSymbol) {
         
         if(typeof(Worker) !== "undefined")
         {
@@ -76,14 +83,30 @@
                 pasada=1;
               }else{
                 tiempo=tiempo | 0;
+                puntoAnterior=punto;
                 punto=arraySegundos[tiempo-segundoComienzo];
-                  PuntosPos.clear();
+                PuntosPos.clear();
+
+                aux=Math.atan2(punto.x-puntoAnterior.x,punto.y-puntoAnterior.y); 
+                aux=calculoAngulo(puntoAnterior.x,puntoAnterior.y,punto.x,punto.y);
+                if(aux!=0 && !isNaN(aux)){
+                  valor=aux+60;
+                  document.getElementById("angulo").value=valor;
+                }
+
               }
-              var sms = new SimpleMarkerSymbol();
+              //Nuevo ahora con icono personalizado
+              var pictureMarkerSymbol = new PictureMarkerSymbol('images/icoBici.png', 30, 30);
+              pictureMarkerSymbol.angle=valor;
+              var graphic = new Graphic(punto, pictureMarkerSymbol);  
+              PuntosPos.add(graphic);
+
+              /*var sms = new SimpleMarkerSymbol();
               sms.setColor(new esri.Color([255,0,0,1]))
               var graphic = new Graphic(punto, sms);  
-              PuntosPos.add(graphic);
+              PuntosPos.add(graphic);*/
               map.centerAt(punto);
+             
 
             }
           };
@@ -116,6 +139,18 @@
         });
 
       });
+
+      function calculoAngulo(x0,y0,x1,y1){
+        Pi=4*Math.atan(1);
+        Az=Math.atan((x1 - x0) / (y1 - y0)) * 200 / Pi ;
+        if((y1 - y0) < 0) 
+          Az = Az + 200 
+        if (((y1 - y0) > 0) && ((x1 - x0) < 0))
+          Az = Az + 400 
+          return Az;
+      }
+
+
 
       //Evento del boton reproducir
       $('#play').click(function(){
@@ -171,7 +206,7 @@
         $(this).attr('src', src);
 
         });
-        
+       
 
     }
 
@@ -190,6 +225,7 @@
             <li><a href="#" id="vapor">Segundo actual:</a></li>
             <li><input id="vaporSegundos"></input></li>
             <li><a href="#" id="gpx">Cargar GPX:</a></li>
+             <li><input id="angulo"></input></li>
           </ul>
         </div>
       </div>
@@ -202,8 +238,10 @@
       </div>
       <div id="botonDesc">
         <img id="play" src="images/play.png"/>
-        <p>Aplicación que sincroniza un video capturado con una cámara Go PRO con un fichero GPX generado con la aplicación Runtastic, lo que permite relacionar un video con la ruta en la que ha sido capturado. Podemos movernos por el video y nos posiciona automaticamente el punto en el Mapa , y podemos hacer click sobre un punto de la ruta sobre el mapa y el video se posicionará en el segundo más proximo capturado en esa posición.</br></br>Realizado por: Carlos Guerrero López.</br> </br>Todo el código en mi GitHub</p>
+        <p>Aplicación que sincroniza un video capturado con una cámara Go PRO con un fichero GPX generado con la aplicación Runtastic, lo que permite relacionar un video con la ruta en la que ha sido capturado. Podemos movernos por el video y nos posiciona automaticamente el punto en el Mapa , y podemos hacer click sobre un punto de la ruta sobre el mapa y el video se posicionará en el segundo más proximo capturado en esa posición.</br></br>Realizado por: <b>Carlos Guerrero López.</b></br> </br><b>Todo el código en <a
+href="https://github.com/saik003/Apps-JavaScript/tree/master/GpxGO">mi GitHub.</a></b></p>
       </div>
+      
     </div>
   </body>
 </html>
