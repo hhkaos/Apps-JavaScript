@@ -89,7 +89,7 @@
 
                 aux=Math.atan2(punto.x-puntoAnterior.x,punto.y-puntoAnterior.y); 
                 if(aux!=0 && !isNaN(aux)){
-                  valor=aux+60;
+                  valor=aux;
                   document.getElementById("angulo").value=valor;
                 }
 
@@ -146,7 +146,8 @@
           Az = Az + 200 
         if (((y1 - y0) > 0) && ((x1 - x0) < 0))
           Az = Az + 400 
-          return Az;
+        Az+60;
+        return Az;
       }
 
 
