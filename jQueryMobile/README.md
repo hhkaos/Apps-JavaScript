@@ -31,7 +31,7 @@ Tiene la siguientes funcionalidades:
 ![Lista de elementos](http://91.121.152.137/images/jquery6.png "Lista de elementos")  
 ![Elemento seleccionado](http://91.121.152.137/images/jquery5.png "Elemento seleccionado")
 
-<img src="http://91.121.152.137/images/jquery1.png" />&nbsp;
+<img width="100px" src="http://91.121.152.137/images/jquery1.png" />&nbsp;
 <img src="http://91.121.152.137/images/jquery6.png" />&nbsp;
 <img src="http://91.121.152.137/images/jquery5.png" />
 
