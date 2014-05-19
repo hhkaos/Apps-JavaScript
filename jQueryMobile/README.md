@@ -27,13 +27,10 @@ Tiene la siguientes funcionalidades:
 **jQuery Mobile 1.4.1**
 
 ###Previsualización
-![Página principal](http://91.121.152.137/images/jquery1.png "Página principal")  
-![Lista de elementos](http://91.121.152.137/images/jquery6.png "Lista de elementos")  
-![Elemento seleccionado](http://91.121.152.137/images/jquery5.png "Elemento seleccionado")
 
-<img width="100px" src="http://91.121.152.137/images/jquery1.png" />&nbsp;
-<img src="http://91.121.152.137/images/jquery6.png" />&nbsp;
-<img src="http://91.121.152.137/images/jquery5.png" />
+<img width="200px" src="http://91.121.152.137/images/jquery1.png" />&nbsp;
+<img width="200px" src="http://91.121.152.137/images/jquery6.png" />&nbsp;
+<img width="200px" src="http://91.121.152.137/images/jquery5.png" />
 
 
 ###Ejemplos
