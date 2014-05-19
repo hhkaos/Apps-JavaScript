@@ -17,7 +17,7 @@ APIS Usadas:
 
 **ArcGIS JavaScript 3.9**
 
-**jQuery Mobile**
+**jQuery Mobile 1.4.1**
 
 ###Actualización
 Ahora el icono es un pictureMarkerSymbol que modifica su ángulo en base a los vértices de la línea.
