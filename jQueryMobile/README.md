@@ -33,6 +33,11 @@ Tiene la siguientes funcionalidades:
 
 ![Elemento seleccionado](http://91.121.152.137/images/jquery5.png "Elemento seleccionado")
 
+<img src="http://91.121.152.137/images/jquery1.png" />&nbsp;
+<img src="http://91.121.152.137/images/jquery6.png" />&nbsp;
+<img src="http://91.121.152.137/images/jquery5.png" />
+
+
 ###Ejemplos
 [Ver demostración](http://91.121.152.137/apps/jquery/index.html).
 
