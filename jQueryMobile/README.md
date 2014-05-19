@@ -20,14 +20,14 @@ Tiene la siguientes funcionalidades:
 
 	* Buscar por estado.- Dada una lista con los estados de EEUU nos muestra todas las ciudades de ese estado pudiendo consultar tanto sus valores alfanumericos, como su ubicación sobre el mapa.
 
-APIS Usadas:
+###APIS Usadas:
 
 **ArcGIS JavaScript 3.9**
 
 **jQuery Mobile 1.4.1**
 
-###Actualización
-Ahora el icono es un pictureMarkerSymbol que modifica su ángulo en base a los vértices de la línea.
+###Previsualización
+![Página principal](http://91.121.152.137/images/jquery1.png "Página principal")
 
 ###Ejemplos
 [Ver demostración](http://91.121.152.137/apps/jquery/index.html).
