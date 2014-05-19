@@ -29,6 +29,7 @@ Tiene la siguientes funcionalidades:
 ###Previsualización
 ![Página principal](http://91.121.152.137/images/jquery1.png "Página principal")
 ![Lista de elementos](http://91.121.152.137/images/jquery5.png "Lista de elementos")
+![Elemento seleccionado](http://91.121.152.137/images/jquery5.png "Elemento seleccionado")
 
 ###Ejemplos
 [Ver demostración](http://91.121.152.137/apps/jquery/index.html).
