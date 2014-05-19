@@ -27,10 +27,8 @@ Tiene la siguientes funcionalidades:
 **jQuery Mobile 1.4.1**
 
 ###Previsualización
-![Página principal](http://91.121.152.137/images/jquery1.png "Página principal")
-
-![Lista de elementos](http://91.121.152.137/images/jquery6.png "Lista de elementos")
-
+![Página principal](http://91.121.152.137/images/jquery1.png "Página principal")  
+![Lista de elementos](http://91.121.152.137/images/jquery6.png "Lista de elementos")  
 ![Elemento seleccionado](http://91.121.152.137/images/jquery5.png "Elemento seleccionado")
 
 <img src="http://91.121.152.137/images/jquery1.png" />&nbsp;
