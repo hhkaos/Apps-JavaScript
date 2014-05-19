@@ -1,25 +1,31 @@
-#GPX GO Pro Hero JavaScript ArcGIS
+#Ejemplo jQuery Mobile con el API 
 
-Este ejemplo sincroniza un video capturado con una camara deportiva **Go Pro Hero**  y un **GPX** capturado con la aplicación **Runtastic**. Con esto podemos ver como ha transcurrido la ruta y lo que hemos visto en cada punto de ella.Podemos usar los controles del video **(API Youtube)** para posicionarnos en el punto del video que deseemos y automaticamente nos mostrará la posicion del mapa mas cercana a ese segundo. Tambien podemos hacer click sobre un punto de la ruta sobre el mapa y automaticamente el video se posicionará en el segundo mas cercano a esa coordenada.
-La sincronizacion del punto en el mapa se realiza cada 2 segundos, este parametro se puede modificar.
+Este ejemplo muestra una aplicación javascript adaptada para dispositivos moviles.
 
-Podemos usarlo con cualquier video y con cualquier GPX , el GPX en la demostración esta renombrado a .xml.
+El ejemplo usa el api jQuery Mobile y el API Compacta de ArcGIS JavaScript.
 
-Como mejoras se podria aplicar que el usuario pudiar seleccionar un video de youtube subido anteriormente y que cargue el GPX que tiene el local para poder realizarlo con sus datos.
+Tiene la siguientes funcionalidades:
+	**Marcadores**.- Ubicaciones almacenadas para posicionarse rapidamente sobre un sitio en el mapa
+	**Identificar**.- Usa la herramienta identificar del API JavaScript de ArcGIS.
+	**Medir**.- Herramienta para medir distancias y areas sobre el mapa
+	**Coordenadas**.- Podemos ir a unas coordenadas insertadas en al aplicación y ver las coordenadas centrales del mapa
+	**Transparencia Servicio**.- Con esta herramienta podemos establecer la transparencia del servicio que estamos consumiendo.
+	**Localizador**.- Geocoder. Podemos indicar una dirección y posicionarnos automaticamente sobre ella.
+	**Buscar por estado**.- Dada una lista con los estados de EEUU nos muestra todas las ciudades de ese estado pudiendo consultar tanto sus valores alfanumericos, como su ubicación sobre el mapa.
 
 APIS Usadas:
 
 **ArcGIS JavaScript 3.9**
 
-**Api Youtube HTML5**
+**jQuery Mobile**
 
 ###Actualización
 Ahora el icono es un pictureMarkerSymbol que modifica su ángulo en base a los vértices de la línea.
 
 ###Ejemplos
-[Ver demostración](http://91.121.152.137/apps/gpxgo/index.html).
+[Ver demostración](http://91.121.152.137/apps/jquery/index.html).
 
-[Aquí](https://github.com/saik003/Apps-JavaScript/tree/master/GPX_GoProHero) el código para descargar.  
+[Aquí](https://github.com/saik003/Apps-JavaScript/tree/master/jQueryMobile) el código para descargar.  
 
 ###Versiones del API de ESRI soportadas
 Probado en versiones: 3.9
