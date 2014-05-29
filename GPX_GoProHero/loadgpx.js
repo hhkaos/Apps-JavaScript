@@ -84,7 +84,7 @@ GPXParser.prototype.addTrackSegmentToMap = function(trackSegment, colour,width) 
             var horaPunto;
             //Variable que usaremos para saber los segundos que hay entre cada punto
             var auxTiempo=dtComienzo;
-            //Guardamos el punto anterior de cada pasada
+            //Guardamos el punto anterior de cada GX.pasada
             var puntoAnterior;
 
 
@@ -106,10 +106,10 @@ GPXParser.prototype.addTrackSegmentToMap = function(trackSegment, colour,width) 
                 auxTiempo=dt2;
                 //Agregamos el punto anterior al array de segundos para poder seguir el video
                 for(var j = 1; j < horas; j++) {
-                    arraySegundos.push(puntoAnterior);
+                    GX.arraySegundos.push(puntoAnterior);
                 }
                 //Agregamos el punto actual al array
-                arraySegundos.push(latlng);
+                GX.arraySegundos.push(latlng);
                 //Almacenamos el punto actual
                 puntoAnterior=latlng;
 
@@ -120,7 +120,7 @@ GPXParser.prototype.addTrackSegmentToMap = function(trackSegment, colour,width) 
                 sms.setOutline(null);
                 var segundoEnVideo=Math.floor((dt2-dtComienzo)/1000);
                 var graphic = new Graphic(latlng, sms,{hora:segundoEnVideo});
-                lgisCapaVerticesGPX.add(graphic);
+                GX.lgisCapaVerticesGPX.add(graphic);
 
             }
             // Por ultimo agregamos todos los puntos a la linea y la dibujamos
