@@ -1,70 +1,64 @@
 <html>
-  <head>  
-    <!--jQuery-->
-    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-    <meta name="viewport" content="initial-scale=1, maximum-scale=1,user-scalable=no"/>
-    <title>Rutas en video Geoposicionadas</title>
-    <!-- css esri-->
-    <link rel="stylesheet" href="http://js.arcgis.com/3.9/js/esri/css/esri.css">
-    <!-- css diseño -->
-    <link rel="stylesheet" href="app.css">
-    <!-- API JavaScript de ArcGIS-->
-    <script src="http://js.arcgis.com/3.9/"></script>
-    <script src="config.js" type="text/javascript"></script>
-    <!-- lectura de fichero gpx-->
-    <script src="loadgpx.js" type="text/javascript"></script>
-    
-    
+<head>  
+
+  <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300' rel='stylesheet' type='text/css'>
+  <!--jQuery-->
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+  <script type='text/javascript' src='js/jquery.simplemodal.js'></script>
+  <script type='text/javascript' src='js/modal.js'></script>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta name="viewport" content="initial-scale=1, maximum-scale=1,user-scalable=no"/>
+  <title>Rutas en video Geoposicionadas</title>
+  <!-- css esri-->
+  <link rel="stylesheet" href="http://js.arcgis.com/3.9/js/esri/css/esri.css">
+  <!-- css diseño -->
+  <link rel="stylesheet" href="styles/app.css">
+  <link type='text/css' href='styles/modal.css' rel='stylesheet' media='screen' />
+  <!-- API JavaScript de ArcGIS-->
+  <script src="http://js.arcgis.com/3.9/"></script>
+  <script src="config.js" type="text/javascript"></script>
+  <!-- lectura de fichero gpx-->
+  <script src="js/loadgpx.js" type="text/javascript"></script>
+
+
 
   <script type="text/javascript">
-  window.GH = {};
+    window.GH = {};
 
-  GX = {
-    // Si queremos que nuestro video comience en un segundo determinado del video lo indicamos
-    segundoComienzo: 0,
-    pasada: 0,
-    comenzar: false,
-    //Capa donde visualizamos la posicion actual
-    PuntosPos: "",
-    //Capa para los puntos que no se ven y enlazar con los segundos del video
-    lgisCapaVerticesGPX: "",
+    GX = {
+      // Si queremos que nuestro video comience en un segundo determinado del video lo indicamos
+      segundoComienzo: 0,
+      pasada: 0,
+      comenzar: false,
+      //Capa donde visualizamos la posicion actual
+      PuntosPos: "",
+      //Capa para los puntos que no se ven y enlazar con los segundos del video
+      lgisCapaVerticesGPX: "",
 
-    //Array usado y cargado desde el fichero loadGPX.js con los segundos del video y la relacion de los puntos del gpx
-    arraySegundos: [],
+      //Array usado y cargado desde el fichero loadGPX.js con los segundos del video y la relacion de los puntos del gpx
+      arraySegundos: [],
 
-    //Punto anterior para cualcular el angulo entre dos puntos
-    puntoAnterior: "",
+      //Punto anterior para cualcular el angulo entre dos puntos
+      puntoAnterior: "",
 
-    //GX.valor del angulo que hay entre cada punto para aplicarselo al icono
-    valor: 0.0
-  };
+      //GX.valor del angulo que hay entre cada punto para aplicarselo al icono
+      valor: 0.0
+    };
 
-$(document).ready(function(){
-    
-    
-    
+    $(document).ready(function(){
 
-    /////////// Código para cargar el API HTML5 de youtube
-    // 2. This code loads the IFrame Player API code asynchronously.
-    var tag = document.createElement('script');
+      /////////// Código para cargar el API HTML5 de youtube
+      // 2. This code loads the IFrame Player API code asynchronously.
+      var tag = document.createElement('script');
 
-    tag.src = "https://www.youtube.com/iframe_api";
-    var firstScriptTag = document.getElementsByTagName('script')[0];
-    firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
-
-    
-
-    
-
-      
-
-
+      tag.src = "https://www.youtube.com/iframe_api";
+      var firstScriptTag = document.getElementsByTagName('script')[0];
+      firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
 
       //Evento del boton reproducir
       $('#play').click(function(){
         if (player) {
-            player.playVideo();
+          player.playVideo();
         }
       });
 
@@ -87,59 +81,76 @@ $(document).ready(function(){
       ////////Evento del boton cargar GPX
       $('#gpx').click(loadGPX);
 
-      
-
       $("img").click(function() { 
         var origsrc = $(this).attr('src');
         var src = '';
         if (origsrc == 'images/play.png'){
-            src = 'images/pause.png';
-            player.playVideo();
-          }
+          src = 'images/pause.png';
+          player.playVideo();
+        }
         if (origsrc == 'images/pause.png'){
           src = 'images/play.png';
           player.pauseVideo();
         }
         $(this).attr('src', src);
 
-        });
-       
-
-    });
-  
-  </script>
-  </head>
-  <body>
-    <div id="general">
-      <div id="barra">
-        <div id="navegador">
-          <ul>
-            <li><a href="#" id="play">Reproducir</a></li>
-            <li><a href="#" id="GX.comenzar">GX.comenzar en:</a></li>
-            <li><input value=50 id="segundos"></input></li>
-            <li><a href="#" id="detener">Detener</a></li>
-            <li><a href="#" id="pausar">Pausar</a></li>
-            <li><a href="#" id="vapor">Segundo actual:</a></li>
-            <li><input id="vaporSegundos"></input></li>
-            <li><a href="#" id="gpx">Cargar GPX:</a></li>
-             <li><input id="angulo"></input></li>
-          </ul>
-        </div>
-      </div>
-      <div id="izquierda">
-         <div id="player"></div>
-      </div>
-      <div id="derecha">
-        <div id="mapMain">
-        </div>
-      </div>
-      <div id="botonDesc">
-        <img id="play" src="images/play.png"/>
-        <p>Aplicación que sincroniza un video capturado con una cámara Go PRO con un fichero GPX generado con la aplicación Runtastic, lo que permite relacionar un video con la ruta en la que ha sido capturado. Podemos movernos por el video y nos posiciona automaticamente el punto en el Mapa , y podemos hacer click sobre un punto de la ruta sobre el mapa y el video se posicionará en el segundo más proximo capturado en esa posición.</br></br>Realizado por: <b>Carlos Guerrero López.</b></br> </br><b>Todo el código en <a
-href="https://github.com/saik003/Apps-JavaScript/tree/master/GpxGO">mi GitHub.</a></b></p>
-      </div>
+      });
+      $("#credits").click(function(){
+        $("#credits-content").modal();;  
+      });
       
+    });
+  </script>
+</head>
+<body>
+  <header id="topHead">
+    Pasea por Granada en bici
+    <a href="#" id="credits" class='basic'>
+      Créditos
+    </a>
+  </header>
+
+  <div id="general">
+    <div id="barra">
+      <div id="navegador">
+        <ul>
+          <li><a href="#" id="play">Reproducir</a></li>
+          <li><a href="#" id="GX.comenzar">GX.comenzar en:</a></li>
+          <li><input value=50 id="segundos"></input></li>
+          <li><a href="#" id="detener">Detener</a></li>
+          <li><a href="#" id="pausar">Pausar</a></li>
+          <li><a href="#" id="vapor">Segundo actual:</a></li>
+          <li><input id="vaporSegundos"></input></li>
+          <li><a href="#" id="gpx">Cargar GPX:</a></li>
+          <li><input id="angulo"></input></li>
+        </ul>
+      </div>
     </div>
-    <script src="js/loadGPX.js" type="text/javascript"></script>
-  </body>
+    <div id="video">
+     <div id="player"></div>
+   </div>
+
+   <div id="mapMain"></div>
+
+  <!-- modal content -->
+    <div id="credits-content">
+      <h3>Autores</h3>
+      <p>En el desarrollo de este storymap han participado:</p>
+      <ul>
+        <li>Carlos Guerrero - GeoAses.com</li>
+        <li>Jorge Aguilera - @Okmakey</li>
+        <li>Raúl Jiménez - Geo Developers</li>
+      </ul>
+    
+      <p>El código puedes encontrarlo en <a href="https://github.com/saik003/Apps-JavaScript/tree/master/GpxGO">GitHub.</a></p>
+    </div>
+  <!-- preload the images -->
+    <div style='display:none'>
+      <img src='images/x.png' alt='' />
+    </div>
+  <script src="js/scripts.js" type="text/javascript"></script>
+
+  
+  <script>document.write('<script src="http://' + (location.host || 'localhost').split(':')[0] + ':35729/livereload.js?snipver=1"></' + 'script>')</script>
+</body>
 </html>
